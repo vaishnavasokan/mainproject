@@ -1,0 +1,56 @@
+
+<app-header></app-header>
+
+
+<section class="custom-container-index" style="border: 1px solid black;">
+
+    <h2 style="color:black; text-align: center;">JOB DETAILS</h2>
+    
+    <form style="position: relative; background: #ffb3b3; margin: 0 auto 100px; padding: 45px; text-align: center;  z-index: 1; ">
+        <div class="row">
+            <div class="col">
+                <table>
+                    <tr>
+                        <td>Job Title </td>
+                        <td><input type="text"  name="jobtitle" [(ngModel)]="jobtitle" required></td>
+            
+                    </tr>
+                    <tr>
+                        <td>Job Description </td>
+                        <td><textarea name="jdesc" id="jdesc" cols="30" rows="40" [(ngModel)]="jdesc" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Qualification </td>
+                        <td><input type="text" name="email" [(ngModel)]="email" required></td>     
+                    </tr>
+                    <tr>
+                        <td>Experience required </td>
+                        <td><input type="text" name="website" style="margin: 10px" [(ngModel)]="website" required ></td>
+                    </tr>
+            </table>
+            </div>
+
+            <div class="col">
+                <table>
+                    <tr>
+                        <td>Number of Positions </td>
+                        <td><input type="text"  name="nop" [(ngModel)]="nop" required></td>
+            
+                    </tr>
+                    <tr>
+                        <td>Salary </td>
+                        <td><input type="text" name="jdesc" [(ngModel)]="jdesc" required></td>
+                    </tr>
+                    <tr>
+                        <td>Job Location </td>
+                        <td><input type="text" name="email" [(ngModel)]="email" required></td>     
+                    </tr>
+            </table>
+            </div>
+        </div>
+    </form>
+</section>
+
+<app-footer></app-footer>
+      
+

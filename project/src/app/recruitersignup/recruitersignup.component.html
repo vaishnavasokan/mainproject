@@ -1,0 +1,67 @@
+
+
+<app-header></app-header>
+
+<div class="container">
+<div class="signup">
+    <div class="row">
+        <div class="col-3 sideDiv">
+
+        </div>
+        <div class="col-5">
+            <br>
+            <div class="row">
+                <div class="col-4"> </div>
+                <div class="col-8">
+                    <h3>Recruiter Registration</h3>
+                </div>
+
+            </div>
+
+            <br>
+
+            <form name="recruiter_registerform">
+                <div class="form-group">
+                    <label class="form-text">Name</label>
+                    <input type="text" [(ngModel)]="uname" name="uname" class="form-control" required>
+                    <br>
+                    <label class="form-text">Email</label>
+                    <input type="text" [(ngModel)]="email" name="email" class="form-control" required>
+                    <label style="font-family: Verdana; color: red">*email will be your username</label>
+                    <br>
+                    <label class="form-text">Create Password</label>
+                    <input type="text" [(ngModel)]="pswd" name="pswd" class="form-control" required>
+                    <br>
+                    <label class="form-text">Mobile</label>
+                    <input type="text" [(ngModel)]="mobno" name="mobno" class="form-control" required>
+                    <br>
+                    <label class="form-text">Company Name</label>
+                    <input type="text" [(ngModel)]="company" name="company" class="form-control" required> 
+                    <br>
+                    <label class="form-text">Designation</label>
+                    <input type="text" [(ngModel)]="designation" name="designation" class="form-control" required> 
+                    <br>
+                    <label class="form-text">Company Address</label>
+                    <textarea rows="4"[(ngModel)]="caddress" name="caddress" class="form-control" required></textarea>
+                    <br>
+                    <label class="form-text">Company Website</label>
+                    <input type="text" [(ngModel)]="cwebsite" name="cwebsite" class="form-control" required>
+                    <br>
+        
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <button class="btn btn-success" (click)="register()" type="submit">REGISTER</button>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+</div>
+<app-footer></app-footer>
+

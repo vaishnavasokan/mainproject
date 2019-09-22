@@ -1,0 +1,129 @@
+
+
+<app-header></app-header>
+<div class="container">
+<div class="userprofile">
+    <div class="row">
+        <div class="col-3 sideDiv">
+
+        </div>
+        <div class="col-5" id="jobseekerdiv" style="display: none">
+            <br>
+            <div class="row">
+                <div class="col-4"> </div>
+                <div class="col-8">
+                    <h2>PROFILE</h2>
+                </div>
+
+            </div>
+
+            <br>
+
+            <form name="userprofile">
+                <div class="form-group">
+                    
+                        <table>
+                                <tr>
+                                    <td><label class="form-text">Name</label></td>
+                                    <td>{{i.uname}}</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><label class="form-text">Email ID</label></td>
+                                    <td>{{i.email}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><label class="form-text">Mobile</label></td> 
+                                    <td>{{i.mobno}}</td>
+                                </tr>
+                                <tr>
+                                    <td><label class="form-text">Present Address</label></td>
+                                    <td><textarea></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td><label class="form-text">Current Location</label></td>  
+                                    <td>{{i.location}}</td>
+                                </tr>                
+                            
+                                <tr>
+                                    <td><input type="button" class="btn btn-success" value="EDIT" (click)="editprofile(i.uname)"/></td>
+                                </tr>
+                            </table>
+                    
+                    <br>
+                    
+                    <br>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-5" id="recruiterdiv" style="display: none">
+            <br>
+            <div class="row">
+                <div class="col-4"> </div>
+                <div class="col-8">
+                    <h2>RECRUITER PROFILE</h2>
+                    <form name="recruiterform" style="width: 450px">
+                        <div class="form-group">
+                    
+                            <table>
+                                    <tr>
+                                        <td><label class="form-text">Name</label></td>
+                                        <td>{{i.uname}}</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><label class="form-text">Email ID</label></td>
+                                        <td>{{i.email}}</td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td><label class="form-text">Mobile</label></td> 
+                                        <td>{{i.mobno}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="form-text">Company</label></td>
+                                        <td>{{i.company}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="form-text">Designation</label></td>
+                                        <td>{{i.designation}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label class="form-text">Company Address</label></td>  
+                                        <td><textarea name="" id="" cols="30" rows="10">{{i.caddress}}</textarea></td>
+                                    </tr>                
+                                    
+                                    <tr>
+                                        <td><label class="form-text">Company Website</label></td>
+                                        <td>{{i.cwebsite}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><input type="button" class="btn btn-success" value="EDIT" (click)="editprofile(i.uname)"/></td>
+                                    </tr>
+                                </table>
+                        
+                        <br>
+                        
+                        <br>
+                    </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-3"></div>
+    </div>
+</div>
+</div>
+
+<app-footer></app-footer>
+
+

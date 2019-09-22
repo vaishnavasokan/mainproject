@@ -1,0 +1,12 @@
+<h1>
+        <!-- here we echo the title from the component -->
+          {{title}}
+        </h1>
+        
+        <!-- File input for the file-upload plugin, with special ng2-file-upload directive called ng2FileSelect -->
+        <input type="file" name="resume" ng2FileSelect [uploader]="uploader" />
+        <!-- button to trigger the file upload when submitted -->
+        <button type="button" class="btn btn-success btn-s"
+              (click)="onClick()" >
+              Upload with ng-2 file uploader
+        </button>

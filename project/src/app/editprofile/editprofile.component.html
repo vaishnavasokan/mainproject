@@ -1,0 +1,65 @@
+
+
+<app-header></app-header>
+<div class="container">
+<div class="userprofile">
+    <div class="row">
+        <div class="col-3 sideDiv">
+
+        </div>
+        <div class="col-5">
+            <br>
+            <div class="row">
+                <div class="col-4"> </div>
+                <div class="col-8">
+                    <h2>EDIT PROFILE</h2>
+                </div>
+
+            </div>
+
+            <br>
+
+            <form name="editprofile">
+                <div class="form-group">
+                    
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="text" name="name" value="{{viewresult[0].uname}}" readonly/></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="text" name="email" value="{{viewresult[0].email}}" /></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>  
+                            <td><input type="text" name="mobno" value="{{viewresult[0].mobno}}" /></td>  
+                        </tr>  
+                        <tr>
+                            <td>Current Location</td>  
+                            <td><input type="text" name="mobno" value="{{viewresult[0].location}}" /></td>  
+                        </tr> 
+                        <tr>
+                                <td></td>  
+                                <td><input type="button" class="btn btn-success" value="Update"/></td>  
+                        </tr>               
+        
+                    </table>  
+                    
+                    <br>
+                    
+                    <br>
+                </div>
+            </form>
+        </div>
+
+        
+
+        <div class="col-3"></div>
+    </div>
+</div>
+</div>
+
+<app-footer></app-footer>
+
+
