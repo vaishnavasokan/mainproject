@@ -1,56 +1,72 @@
-
 <app-header></app-header>
 
 
 <section class="custom-container-index" style="border: 1px solid black;">
 
     <h2 style="color:black; text-align: center;">JOB DETAILS</h2>
-    
-    <form style="position: relative; background: #ffb3b3; margin: 0 auto 100px; padding: 45px; text-align: center;  z-index: 1; ">
+
+    <form [formGroup]="jobForm"
+        style="position: relative; background: #ffb3b3; margin: 0 auto 100px; padding: 45px; text-align: center;  z-index: 1; ">
         <div class="row">
             <div class="col">
                 <table>
                     <tr>
                         <td>Job Title </td>
-                        <td><input type="text"  name="jobtitle" [(ngModel)]="jobtitle" required></td>
-            
+                        <td><input type="text" formControlName="jobtitle" name="jobtitle" [(ngModel)]="jobtitle"
+                                required></td>
+
                     </tr>
                     <tr>
                         <td>Job Description </td>
-                        <td><textarea name="jdesc" id="jdesc" cols="30" rows="40" [(ngModel)]="jdesc" required></textarea></td>
+                        <td><textarea name="jdesc" formControlName="jdesc" id="jdesc" cols="30" rows="40"
+                                [(ngModel)]="jdesc" required></textarea></td>
                     </tr>
                     <tr>
-                        <td>Qualification </td>
-                        <td><input type="text" name="email" [(ngModel)]="email" required></td>     
+                        <td>Qualification</td>
+                        <td>
+                            <select required class="form-control" formControlName="qualification">
+                                <option disabled="true">---select---</option>
+                                <option *ngFor="let item of qualifications" value="{{item.name}}">{{item.name}}</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Experience required </td>
-                        <td><input type="text" name="website" style="margin: 10px" [(ngModel)]="website" required ></td>
+                        <td><input type="text" formControlName="experience" name="experience" style="margin: 10px"
+                                [(ngModel)]="experience" required>
+                        </td>
                     </tr>
-            </table>
+                </table>
             </div>
 
             <div class="col">
                 <table>
                     <tr>
                         <td>Number of Positions </td>
-                        <td><input type="text"  name="nop" [(ngModel)]="nop" required></td>
-            
+                        <td><input type="text" formControlName="openingAvailable" name="openingAvailable"
+                                [(ngModel)]="openingAvailable" required></td>
+
                     </tr>
                     <tr>
                         <td>Salary </td>
-                        <td><input type="text" name="jdesc" [(ngModel)]="jdesc" required></td>
+                        <td><input type="text" formControlName="salary" name="salary" [(ngModel)]="salary" required>
+                        </td>
                     </tr>
                     <tr>
                         <td>Job Location </td>
-                        <td><input type="text" name="email" [(ngModel)]="email" required></td>     
+                        <td><input type="text" formControlName="jlocation" name="jlocation" [(ngModel)]="jlocation"
+                                required></td>
                     </tr>
-            </table>
+
+                    <tr>
+                        <td><input type="button" class="btn btn-success" value="ADD JOB" (click)="postjob()" /></td>
+                    </tr>
+
+
+                </table>
             </div>
         </div>
     </form>
 </section>
 
 <app-footer></app-footer>
-      
-

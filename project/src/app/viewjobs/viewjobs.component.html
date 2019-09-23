@@ -1,0 +1,64 @@
+<app-header></app-header>
+<br>
+<label for="" style="font-family: Verdana; color: red">*Apply only for the jobs that matches the mentioned eligibility criteria</label>
+<br>
+
+<div class="container" style="border: 1px solid black;">
+    
+        <div class="row">
+        <form>
+            <div class="col col-4 col-sm-6">
+           
+                <table>
+                    <tr>
+                        <td *ngFor="let i of jobdetails" >
+                            <tr>
+                                <td>Job Title</td>
+                                <td></td>
+                                <td>{{i.jobtitle}}</td>
+                            </tr>
+                            <tr>
+                                <td>Job Location</td>
+                                <td></td>
+                                <td>{{i.jlocation}}</td>
+                            </tr>
+                            <tr>
+                                <td>Job Description</td>
+                                <td></td>
+                                <td>{{i.jdesc}}</td>
+                            </tr>
+                            <tr>
+                                <td>Required Qualification</td>
+                                <td></td>
+                                <td>{{i.qualification}}</td>
+                            </tr>
+                            <tr>
+                                <td>Work Experience</td>
+                                <td></td>
+                                <td>{{i.experience}}</td>
+                            </tr>
+                            <tr>
+                                <td>Number of vacancies</td>
+                                <td></td>
+                                <td>{{i.openingAvailable}}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><input type="button" class="btn btn-primary" value="Apply Now"/></td>
+                            </tr>
+                    
+                        </td>
+                    </tr>
+                    
+                    
+                </table>
+            
+            </div>
+        </form>
+        </div>
+</div>
+
+<br>
+<br>
+<app-footer></app-footer>

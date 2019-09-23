@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FileUploadModule } from "ng2-file-upload";
-import{FormsModule,ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import {RouterModule,Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,18 +16,23 @@ import { JobvacancyComponent } from './jobvacancy/jobvacancy.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { RecruitersignupComponent } from './recruitersignup/recruitersignup.component'
 
-import {RegisterService} from './register.service';
-import {AlertService} from './alert.service';
-import { EditprofileComponent } from './editprofile/editprofile.component'
+import { RegisterService } from './register.service';
+import { AlertService } from './alert.service';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { ViewjobsComponent } from './viewjobs/viewjobs.component';
+import { EditrecruiterComponent } from './editrecruiter/editrecruiter.component'
 
 
-const approutes:Routes=[
-  {path:"", component:HomeComponent},
-  {path:"register",component:SignupComponent},
-  {path:"recruiterregister",component:RecruitersignupComponent},
-  {path:"postjob",component:JobvacancyComponent},
-  {path:"userprofile",component:UserprofileComponent},
-  {path:"editprofile/:id",component:EditprofileComponent}
+const approutes: Routes = [
+  { path: "", component: HomeComponent },
+  { path: "register", component: SignupComponent },
+  { path: "recruiterregister", component: RecruitersignupComponent },
+  { path: "postjob", component: JobvacancyComponent },
+  { path: "viewjobs", component: ViewjobsComponent },
+  { path: "userprofile/:id", component: UserprofileComponent },
+  { path: "editprofile/:id", component: EditprofileComponent },
+  { path: "editrecruiter/:id", component: EditrecruiterComponent}
+
 ];
 
 //children:[{path:"editprofile/:id",component:EditprofileComponent}]
@@ -43,7 +48,9 @@ const approutes:Routes=[
     JobvacancyComponent,
     UserprofileComponent,
     RecruitersignupComponent,
-    EditprofileComponent
+    EditprofileComponent,
+    ViewjobsComponent,
+    EditrecruiterComponent
   ],
   imports: [
     BrowserModule,
@@ -53,10 +60,10 @@ const approutes:Routes=[
     FileUploadModule,
     RouterModule.forRoot(approutes),
     ReactiveFormsModule
-    
+
 
   ],
-  providers: [RegisterService,AlertService],
+  providers: [RegisterService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

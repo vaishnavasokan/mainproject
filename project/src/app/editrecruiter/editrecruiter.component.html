@@ -1,8 +1,10 @@
+<p>editrecruiter works!</p>
+
 
 
 <app-header></app-header>
 <div class="container">
-<div class="userprofile">
+<div class="editrecruiterprofile">
     <div class="row">
         <div class="col-3 sideDiv">
 
@@ -19,7 +21,7 @@
 
             <br>
 
-            <form name="editprofile">
+            <form name="editrecruiter">
                 <div class="form-group">
                     
                     <table>
@@ -37,12 +39,20 @@
                             <td><input type="text" name="mobno" value="{{viewresult[0].mobno}}" [(ngModel)]="mobno" /></td>  
                         </tr>  
                         <tr>
-                                <td>Present Address</td>  
-                                <td><textarea name="address" [(ngModel)]="address"></textarea></td>  
-                            </tr>
+                            <td>Company</td>  
+                            <td><input type="text" name="company" value="{{viewresult[0].company}}" [(ngModel)]="company" /></td>  
+                        </tr>  
                         <tr>
-                            <td>Current Location</td>  
-                            <td><input type="text" name="mobno" value="{{viewresult[0].location}}" [(ngModel)]="location" /></td>  
+                            <td>Designation</td>  
+                            <td><input type="text" name="designation" value="{{viewresult[0].designation}}" [(ngModel)]="designation" /></td>  
+                        </tr> 
+                        <tr>
+                                <td>Company Address</td>  
+                                <td><textarea name="caddress" value="{{viewresult[0].caddress}}" [(ngModel)]="caddress" cols="30" rows="10"></textarea></td>  
+                            </tr> 
+                        <tr>
+                            <td>Company Website</td>  
+                            <td><input type="text" name="cwebsite" value="{{viewresult[0].cwebsite}}" [(ngModel)]="cwebsite" /></td>  
                         </tr> 
                         <tr>
                                 <td></td>  
@@ -66,5 +76,6 @@
 </div>
 
 <app-footer></app-footer>
+
 
 

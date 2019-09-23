@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
+  uid;
 
   constructor(private http:HttpClient) 
   { 
     
   }
 
+  addjob(data) : Observable<any> {
+    return this.http.post<any>(`http://localhost:8080/users/postjob`, data)
+  }
 
-  /*public adduser(item)
-  {
-    let url="http://localhost:8080/";
-    return this.hc.post(url,item);
-  }*/
 
     public logincheck(username,password)
     {
@@ -41,11 +40,42 @@ export class RegisterService {
 
   public viewdata(id)
   {
+    //console.log("service editprofile"+id);
+    
     let url="http://localhost:8080/users/view/"+id;
     return this.http.get(url);
   }
 
+  public viewrecruiter(id)
+  {
+    //console.log("service rec editprofile"+id);
     
+    let url="http://localhost:8080/users/viewrecruiter/"+id;
+    return this.http.get(url);
+  }
+
+  getProfile(id): Observable<any>
+  {
+    return this.http.get<any>(`http://localhost:8080/users/fetchuser/`+id)
+  }
+
+  getjobs()
+  {
+    let url="http://localhost:8080/users/viewjobs";
+    return this.http.get(url);
+  }
+
+  updatedata1(id)
+  {
+
+    this.uid=id;
+    //console.log("service update"+this.uid);
+    let url="http://localhost:8080/users/updateuser/"+this.uid;
+    return this.http.get(url);
+
+    //return this.http.get(url,{uname:a,email:b,mobno:c,presentAddress:d,location:e});
+  }
+
   logout() 
   {
       // remove user from local storage and set current user to null

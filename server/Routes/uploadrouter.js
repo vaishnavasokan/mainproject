@@ -6,7 +6,7 @@ var router = express.Router();
 var bodyparser = require("body-parser");
 
 var mongoose = require("mongoose");
-var url="mongodb://localhost/project";
+var url="mongodb+srv://vaishnavasokan:Vysh1234*@cluster0-j3qq4.mongodb.net/mainproject?retryWrites=true&w=majority";
 
 var user=require("../model/usermodel"); 
 var login=require("../model/loginmodel")
@@ -75,7 +75,6 @@ router.route('/').post(function (req, res, next) {
     u1.pswd = req.body.pswd;
     l1.pswd = req.body.pswd;
     u1.location = req.body.location;
-    console.log("here");
     u1.resume =req.file.filename;
     u1.utype="jobseeker";
     l1.utype="jobseeker";

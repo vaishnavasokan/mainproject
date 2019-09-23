@@ -9,7 +9,8 @@ var userschema=new schema(
         pswd:{type:String,required:true},
         location:{type:String,required:true},
         resume:{type:String,required:true},
-        utype:{type:String,required:true}
+        utype:{type:String,required:true},
+        presentAddress:{type:String}
         
     }
 )

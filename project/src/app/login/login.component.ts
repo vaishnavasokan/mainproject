@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
-  returnUrl: string;
+  returnUrl: any;
 
 
   constructor(
@@ -61,10 +61,12 @@ export class LoginComponent implements OnInit {
         resultdata => {
 
           resultdata = JSON.parse(JSON.stringify(resultdata))
-          console.log(resultdata);
+          console.log("ithaanu ", resultdata);
           localStorage.setItem('user', JSON.parse(JSON.stringify(resultdata)).data)
-          console.log("item : " + JSON.stringify(JSON.parse(JSON.stringify(resultdata)).data));
-          this.rt.navigate([this.returnUrl, {info:JSON.stringify(JSON.parse(JSON.stringify(resultdata)).data)}]);
+          console.log("item : " + JSON.stringify(JSON.parse(JSON.stringify(resultdata)).data._id));
+          const x = JSON.stringify(JSON.parse(JSON.stringify(resultdata)).data._id)
+          
+          this.rt.navigateByUrl('/userprofile/'+ JSON.parse(x));
         },
         error => {
           this.alertService.error(error);

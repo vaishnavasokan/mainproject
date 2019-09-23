@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Matriculation"
+    },
+    {
+        "name": "Plus Two"
+    },
+    {
+        "name": "Graduate"
+    },
+    {
+        "name": "Post Graduate"
+    },
+    {
+        "name": "Any"
+    },
+    {
+        "name": "Others(Specify in description)"
+    }
+]

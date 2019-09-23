@@ -10,6 +10,7 @@ import { RegisterService } from '../register.service';
 export class UserprofileComponent implements OnInit {
 
   view:boolean;
+  profile: any;
 
   constructor(
     private rs:RegisterService,
@@ -17,26 +18,45 @@ export class UserprofileComponent implements OnInit {
     public route:ActivatedRoute
     ) { }
 
-    public i=null;
+  public i=null;
   ngOnInit() {
 
-    //console.log(this.route.snapshot.params.info);
-    this.i=JSON.parse(this.route.snapshot.params.info);
-    console.log(this.i);
-    console.log("**usertype**"+this.i.utype);
-
-    if(this.i.utype=="jobseeker")
-        document.getElementById("jobseekerdiv").style.display="block";
-    else
-        document.getElementById("recruiterdiv").style.display="block";
+    this.route.params.subscribe(params => {
+    this.i = params.id;
+    console.log("aaaaaaa : "+this.i);
+      
+    this.getById(this.i);
+        
+    });
     
       
   }
 
+  getById(id) {
+  this.rs.getProfile(id)
+  .subscribe(res => {
+  this.profile = res.data;
+    if (this.profile.utype === 'jobseeker') {
+      document.getElementById("jobseekerdiv").style.display="block";
+               
+      } else {
+        document.getElementById("recruiterdiv").style.display="block";        
+      }
+
+      console.log('Profile', this.profile.utype);  
+    });
+  }
+
   public editprofile(id)
   {
-      console.log("edit uname: "+id);
+      console.log("edit user: "+id);
       this.rt.navigateByUrl("/editprofile/"+id)
+  }
+
+  public editrecruiter(id)
+  {
+      console.log("edit recruiter: "+id);
+      this.rt.navigateByUrl("/editrecruiter/"+id)
   }
 
   /*public viewprofile()
